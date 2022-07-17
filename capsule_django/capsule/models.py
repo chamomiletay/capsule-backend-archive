@@ -32,10 +32,12 @@ from django.db import models
 
 # Create your models here.
 
+
 # --- wardrobe clothing articles model ---
 
 class Article(models.Model):
-#---- define clothing choices for user to select ----
+
+    #---- define clothing choices for user to select ----
     class ArticleType(models.TextChoices):
         TOP = '1', 'Top'
         BOTTOMS = '2', 'Bottoms'
@@ -50,7 +52,7 @@ class Article(models.Model):
         ACCESSORY = '11', 'Accessory'
         SOCKS = '12', 'Socks/Tights'
 
-#---- define clothing categories ----
+    #---- define clothing categories ----
     class CategoryType(models.TextChoices):
         LOUNGEWEAR = '1', 'Loungewear'
         CASUAL = '2', 'Casual'
@@ -59,7 +61,7 @@ class Article(models.Model):
         WORK = '5', 'Work'
 
 
-#---- define clothing color options ----
+    #---- define clothing color options ----
     class Color(models.TextChoices):
         RED = '1', 'Red'
         ORANGE = '2', 'Orange'
@@ -68,13 +70,14 @@ class Article(models.Model):
         GREEN = '5', 'Green'
         WHITE = '6', 'White'
         BEIGE = '7', 'Beige'
-        BLACK = '8', 'Black'
-        PURPLE = '9', 'Purple'
-        PINK = '10', 'Pink'
-        GRAY = '11', 'Gray'
-        BROWN = '12', 'Brown'
-        TAN = '13', 'Tan'
-        MULTI = '14', 'Multi'
+        CREAM = '8', 'Cream'
+        BLACK = '9', 'Black'
+        PURPLE = '10', 'Purple'
+        PINK = '11', 'Pink'
+        GRAY = '12', 'Gray'
+        BROWN = '13', 'Brown'
+        TAN = '14', 'Tan'
+        MULTI = '15', 'Multi'
 
 
     name = models.CharField(max_length=255)
@@ -85,7 +88,7 @@ class Article(models.Model):
     brand = models.CharField(max_length=255)
     quantity = models.IntegerField()
 
-    #display model instance
+    #---- display model instance ----
     def __str__(self):
         return self.name
 
