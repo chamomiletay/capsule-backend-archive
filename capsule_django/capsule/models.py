@@ -59,11 +59,11 @@ class Article(models.Model):
 
 
     name = models.CharField(max_length=255)
-    color = models.TextField()
+    color = models.CharField(max_length=255)
     image = models.ImageField(upload_to='images/')
     article_type = models.CharField(max_length=2, choices=ArticleType.choices, default=ArticleType.TOP)
     category = models.CharField(max_length=1, choices=CategoryType.choices, default=CategoryType.LOUNGEWEAR)
-    brand = models.TextField()
+    brand = models.CharField(max_length=255)
     quantity = models.IntegerField()
 
     #display model instance
