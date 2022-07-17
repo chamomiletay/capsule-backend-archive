@@ -9,7 +9,7 @@ from django.db import models
 class Article(models.Model):
     name = models.TextField()
     color = models.TextField()
-    image_url = models.TextField()
+    image = models.ImageField()
     article_type = models.TextField()
     category = models.TextField()
     brand = models.TextField()
