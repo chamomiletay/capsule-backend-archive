@@ -85,14 +85,9 @@ WSGI_APPLICATION = 'capsule_django.wsgi.application'
 CORS_ALLOW_ALL_ORIGINS = True
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'capsule',
-        'USER': 'capsuleuser',
-        'PASSWORD': 'capsule',
-        'HOST': 'localhost'
-    }
+  'default': dj_database_url.config(conn_max_age=600)
 }
+
 
 
 # Password validation
@@ -135,3 +130,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#--- tell django where to store static files ---
+STATIC_ROOT=os.path.join(BASE_DIR, "static/")
