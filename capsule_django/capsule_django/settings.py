@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-yx8chthpijc&sirotu!u%eofwcji#4-*t51c+%l#_ivo@lh0b+'
+SECRET_KEY = 'django-insecure-_#3k3b#p#d6*fcthob0evmb-mll1y_x)kos$!=o-29)40@0l=$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'capsule',
         'USER': 'capsuleuser',
         'PASSWORD': 'capsule',
-        'HOST': 'localhost',
+        'HOST': 'localhost'
     }
 }
 
