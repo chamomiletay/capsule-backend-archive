@@ -50,6 +50,7 @@ class Article(models.Model):
         ACCESSORY = '11', 'Accessory'
         SOCKS = '12', 'Socks/Tights'
 
+#---- define clothing categories ----
     class CategoryType(models.TextChoices):
         LOUNGEWEAR = '1', 'Loungewear'
         CASUAL = '2', 'Casual'
@@ -58,8 +59,26 @@ class Article(models.Model):
         WORK = '5', 'Work'
 
 
+#---- define clothing color options ----
+    class Color(models.TextChoices):
+        RED = '1', 'Red'
+        ORANGE = '2', 'Orange'
+        YELLOW = '3', 'Yellow'
+        BLUE = '4', 'Blue'
+        GREEN = '5', 'Green'
+        WHITE = '6', 'White'
+        BEIGE = '7', 'Beige'
+        BLACK = '8', 'Black'
+        PURPLE = '9', 'Purple'
+        PINK = '10', 'Pink'
+        GRAY = '11', 'Gray'
+        BROWN = '12', 'Brown'
+        TAN = '13', 'Tan'
+        MULTI = '14', 'Multi'
+
+
     name = models.CharField(max_length=255)
-    color = models.CharField(max_length=255)
+    color = models.CharField(max_length=2, choices=Color.choices, default=Color.RED)
     image = models.ImageField(upload_to='images/')
     article_type = models.CharField(max_length=2, choices=ArticleType.choices, default=ArticleType.TOP)
     category = models.CharField(max_length=1, choices=CategoryType.choices, default=CategoryType.LOUNGEWEAR)
