@@ -131,5 +131,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#--- tell django where to store static files ---
+#---- tell django where to store static files ----
 STATIC_ROOT=os.path.join(BASE_DIR, "static/")
