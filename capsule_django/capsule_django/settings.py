@@ -62,7 +62,10 @@ ROOT_URLCONF = 'capsule_django.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+        # ---- define path to retrieve templates via react app ----
+            os.path.join(BASE_DIR, 'frontend/build')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -133,3 +136,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #---- tell django where to store static files ----
 STATIC_ROOT=os.path.join(BASE_DIR, "static/")
+
+#---- whitelist react app via cors ----
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000'
+]
